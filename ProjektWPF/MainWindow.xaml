@@ -5,8 +5,63 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjektWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Przelicznik walut" Height="450" Width="800" MinHeight="300" MinWidth="200">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="OutputValue"
+            Grid.ColumnSpan="2"
+            Margin="10,10,5,5"
+            FontSize="48"
+            TextAlignment="Right"
+            IsEnabled="False"
+            >
+            0,00
+        </TextBox>
+        <TextBox x:Name="InputValue"
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Margin="10,5,5,5"
+            FontSize="48"
+            TextAlignment="Right" PreviewTextInput="NumberValidation"
+            >
+            0,00
+        </TextBox>
+        <Button x:Name="CodeButton"
+            Grid.Column="0"
+            Grid.Row="2"
+            Grid.ColumnSpan="3"
+            Margin="10,5,10,10"
+            FontSize="36"
+            Foreground="DarkCyan"
+            Background="AliceBlue" Click="CalcOutput"
+            >
+            Przelicz
+        </Button>
+        <ComboBox x:Name="OutputCurrencyCode" 
+            Grid.Column="2" 
+            HorizontalAlignment="Stretch" 
+            Margin="5,10,10,3" 
+            VerticalAlignment="Stretch" 
+            FontSize="36"
+        />
+        <ComboBox x:Name="InputCurrencyCode" 
+            Grid.Column="2" 
+            HorizontalAlignment="Stretch" 
+            Margin="5,5,10,5" 
+            Grid.Row="1" 
+            VerticalAlignment="Stretch" 
+            FontSize="36"
+        />
 
     </Grid>
 </Window>
